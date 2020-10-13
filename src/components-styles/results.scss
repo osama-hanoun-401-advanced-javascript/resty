@@ -1,0 +1,44 @@
+@import "colors.scss";
+.json-div {
+    #json-pretty {
+        background-image: $global-gradientColor;
+        border-radius: 15px;
+        width: 57%;
+        margin: 0 auto;
+        box-shadow: 5px 5px $global-primaryColor3;
+        padding: 30px;
+        margin-bottom: 20px;
+    }
+    .__json-pretty__ {
+        padding-left: 10px;
+        line-height: 1.3;
+        color: #748096;
+        background: rgb(255, 255, 255);
+        height: 500px;
+        overflow: scroll;
+    }
+    .__json-pretty__ .__json-key__ {
+        color: $global-primaryColor1;
+    }
+    .__json-pretty__ .__json-value__ {
+        color: $global-primaryColor3;
+        width: 80%;
+    }
+    .__json-pretty__ .__json-string__ {
+        color: $global-primaryColor3;
+        width: 80%;
+    }
+    .__json-pretty__ .__json-boolean__ {
+        color: #448aa9;
+        width: 80%;
+    }
+    .__json-pretty-error__ {
+        text-align: center;
+        margin: 0 auto;
+        line-height: 1.3;
+        color: $global-primaryColor1;
+        background: white;
+        width: 83%;
+        padding: 5px;
+    }
+}
