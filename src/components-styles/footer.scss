@@ -1,13 +1,26 @@
+@import "colors.scss";
 footer {
     width: 100%;
-    background-color: #ffc7c7;
+    background-color: $global-primaryColor2;
     height: 40px;
     text-align: center;
     vertical-align: middle;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
     p {
-        color: #24a19c;
+        color: $global-primaryColor4;
         line-height: 2rem;
         font-size: 1rem;
         font-family: "Pacifico", cursive;
     }
+    a {
+        text-decoration: none;
+        color: $global-primaryColor3;
+    }
+}
+.footer-true {
+    position: relative;
 }

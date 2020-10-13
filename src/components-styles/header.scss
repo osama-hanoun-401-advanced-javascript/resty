@@ -1,14 +1,15 @@
+@import "colors.scss";
+
 header {
-  width:100%;
-  background-color: #24a19c;
+  width: 100%;
+  background-image: $global-gradientColor;
   height: 200px;
   text-align: center;
   vertical-align: middle;
-  h1{
-    color:#ffc7c7;
+  h1 {
+    color: $global-primaryColor4;
     line-height: 200px;
     font-size: 4rem;
-    font-family: 'Pacifico', cursive;
+    font-family: "Pacifico", cursive;
   }
-  
 }

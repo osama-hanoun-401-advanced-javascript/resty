@@ -1,10 +1,10 @@
-import styles from '../components-styles/footer.scss';
+import '../components-styles/footer.scss';
 import React from 'react';
 
-const footer = () => {
+const footer = (props) => {
     return (
-        <footer className={styles}>
-            <p>© 2020 Osama Hanoun</p>
+        <footer className={'footer-' + props.footerClass}>
+            <p>Made with ♥ by <a href="https://www.linkedin.com/in/osama-hanoun/">Osama Hanoun</a> </p>
         </footer>
     )
 };

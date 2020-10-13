@@ -4,7 +4,7 @@ import React from 'react';
 const header = () => {
     return (
         <header className={styles.header}>
-           <h1>RUSTy</h1>
+            <h1>RESTy</h1>
         </header>
     )
 };
