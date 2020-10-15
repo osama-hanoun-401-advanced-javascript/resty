@@ -30,16 +30,16 @@ class App extends React.Component {
         <BrowserRouter>
 
           <Header />
-          <Route exact path="/resty">
+          <Route exact path="resty/">
             <Form formHandler={this.formHandler} />
             <When condition={!!this.state.resultArr}>
               <Results exact pa results={this.state.resultArr} />
             </When>
           </Route>
-          <Route exact path="/History">
+          <Route exact path="resty/History">
             <p>still didn't finish lab 28 working on it </p>
           </Route>
-          <Route exact path="/help">
+          <Route exact path="resty/help">
             <p>This is help </p>
           </Route>
           <Footer footerClass={this.state.footerToggle} />
