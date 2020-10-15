@@ -30,7 +30,7 @@ class App extends React.Component {
         <BrowserRouter>
 
           <Header />
-          <Route exact path="/">
+          <Route exact path="/resty">
             <Form formHandler={this.formHandler} />
             <When condition={!!this.state.resultArr}>
               <Results exact pa results={this.state.resultArr} />
