@@ -14,6 +14,7 @@ class App extends React.Component {
     resultArr: null,
     footerToggle: false,
     history: JSON.parse(localStorage.getItem('history')),
+    formValues: { url: NaN, method: NaN, body: NaN },
   };
   formHandler = (count, resultArr) => {
     this.setState({
@@ -22,20 +23,23 @@ class App extends React.Component {
       footerToggle: !this.state.footerToggle,
     });
   }
+  formValuesHandler = obj => {
+    this.setState({ formValues: obj });
+  }
 
 
   render() {
     return (
       <React.Fragment>
         <Header />
-        <Form formHandler={this.formHandler} />
+        <Form formHandler={this.formHandler} formValues={this.state.formValues} />
+
+        <When condition={this.state.history}>
+          <History history={this.state.history} formValuesHandler={this.formValuesHandler} />
+        </When>
         <When condition={!!this.state.resultArr}>
           <Results results={this.state.resultArr} />
         </When>
-        <When condition={this.state.history}>
-          <History history={this.state.history} />
-        </When>
-
         <Footer footerClass={this.state.footerToggle} />
       </React.Fragment>
     )
