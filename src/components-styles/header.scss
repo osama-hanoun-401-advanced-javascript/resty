@@ -12,4 +12,11 @@ header {
     font-size: 4rem;
     font-family: "Pacifico", cursive;
   }
+  ul {
+    list-style: none;
+    li {
+      display: inline-block;
+      margin-right: 15px;
+    }
+  }
 }
