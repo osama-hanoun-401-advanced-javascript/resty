@@ -23,9 +23,11 @@ class App extends React.Component {
       count: count,
       resultArr: resultArr,
       footerToggle: !this.state.footerToggle,
+      history: JSON.parse(localStorage.getItem('history')),
     });
   }
   formValuesHandler = obj => {
+    console.log('clicked-app')
     this.setState({ formValues: obj });
   }
 
@@ -36,16 +38,19 @@ class App extends React.Component {
         <BrowserRouter>
 
           <Header />
-          <Route exact path="resty/">
-            <Form formHandler={this.formHandler} />
+          <Route exact path="/">
+            <Form formHandler={this.formHandler} formValues={this.state.formValues} />
+            <When condition={this.state.history !== undefined}>
+              <History formValuesHandler={this.formValuesHandler} history={this.state.history} withBody={false} />
+            </When>
             <When condition={!!this.state.resultArr}>
               <Results exact pa results={this.state.resultArr} />
             </When>
           </Route>
-          <Route exact path="resty/History">
-            <p>still didn't finish lab 28 working on it </p>
+          <Route exact path="/History">
+            <History history={this.state.history} withBody={true} />
           </Route>
-          <Route exact path="resty/help">
+          <Route exact path="/help">
             <p>This is help </p>
           </Route>
           <Footer footerClass={this.state.footerToggle} />

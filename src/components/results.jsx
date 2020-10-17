@@ -1,10 +1,14 @@
 import '../components-styles/results.scss';
 import React from 'react';
-import JSONPretty from 'react-json-pretty';
+import ReactJson from 'react-json-view'
+
 const results = (props) => {
     return (
         <div className="json-div">
-            <JSONPretty id="json-pretty" data={props.results}></JSONPretty>
+            <h3>Header</h3>
+            <ReactJson src={props.results.header} />
+            <h3>Body</h3>
+            <ReactJson src={props.results.body} />
         </div>
     )
 };
