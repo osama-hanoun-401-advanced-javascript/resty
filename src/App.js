@@ -38,7 +38,7 @@ class App extends React.Component {
         <BrowserRouter>
 
           <Header />
-          <Route exact path="resty/">
+          <Route exact path="/">
             <Form formHandler={this.formHandler} formValues={this.state.formValues} />
             <When condition={this.state.history !== undefined}>
               <History formValuesHandler={this.formValuesHandler} history={this.state.history} withBody={false} />
@@ -47,10 +47,10 @@ class App extends React.Component {
               <Results exact pa results={this.state.resultArr} />
             </When>
           </Route>
-          <Route exact path="resty/History">
+          <Route exact path="/History">
             <History history={this.state.history} withBody={true} />
           </Route>
-          <Route exact path="resty/help">
+          <Route exact path="/help">
             <p>This is help </p>
           </Route>
           <Footer footerClass={this.state.footerToggle} />
