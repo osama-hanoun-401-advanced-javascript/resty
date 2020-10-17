@@ -16,7 +16,7 @@ class App extends React.Component {
     resultArr: null,
     footerToggle: false,
     history: JSON.parse(localStorage.getItem('history')),
-    formValues: { url: NaN, method: NaN, body: NaN },
+    formValues: { url: '', method: '', body: '' },
   };
   formHandler = (count, resultArr) => {
     this.setState({
