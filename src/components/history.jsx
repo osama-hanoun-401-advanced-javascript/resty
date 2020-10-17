@@ -36,7 +36,7 @@ class History extends React.Component {
                         </tr>
                     </thead>
                     <tbody >
-                        <When condition={this.props.history}>
+                        <When condition={this.props.history !== null}>
                             {this.props.history.map((val, i) => {
                                 return <tr dataset={JSON.stringify(val.results)} onClick={(e) => this._handleHistory2Form(e, this.props.formValuesHandler, this.props.withBody)} key={i}>
                                     {Object.keys(val).map((key, j) => {
