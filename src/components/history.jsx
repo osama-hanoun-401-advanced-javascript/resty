@@ -22,31 +22,38 @@ class History extends React.Component {
 
 
     }
+    computedValue = () => {
+        if (this.props.history) return (
+            <table>
+                <thead>
+                    <tr>
+                        <th>method</th>
+                        <th>status</th>
+                        <th> url</th>
+                        <th>body</th>
+                    </tr>
+                </thead>
+                <tbody >
 
+                    {this.props.history.map((val, i) => {
+                        return <tr dataset={JSON.stringify(val.results)} onClick={(e) => this._handleHistory2Form(e, this.props.formValuesHandler, this.props.withBody)} key={i}>
+                            {Object.keys(val).map((key, j) => {
+                                return (key !== 'results' ? <td className={key} key={j}>{val[key]}</td> : null);
+                            })}
+                        </tr>
+                    })}
+                </tbody>
+            </table>
+
+
+        )
+    }
     render() {
+        let tableBody = this.computedValue();
         return (
             <>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>method</th>
-                            <th>status</th>
-                            <th> url</th>
-                            <th>body</th>
-                        </tr>
-                    </thead>
-                    <tbody >
-                        <When condition={this.props.history !== null}>
-                            {this.props.history.map((val, i) => {
-                                return <tr dataset={JSON.stringify(val.results)} onClick={(e) => this._handleHistory2Form(e, this.props.formValuesHandler, this.props.withBody)} key={i}>
-                                    {Object.keys(val).map((key, j) => {
-                                        return (key !== 'results' ? <td className={key} key={j}>{val[key]}</td> : null);
-                                    })}
-                                </tr>
-                            })}
-                        </When>
-                    </tbody>
-                </table>
+                {tableBody}
+
                 <When condition={this.props.withBody && this.state.results}>
                     <Results results={this.state.results} />
                 </When>
